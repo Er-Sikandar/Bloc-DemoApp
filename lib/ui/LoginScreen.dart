@@ -20,7 +20,13 @@ class _LoginscreenState extends State<Loginscreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(),
+      appBar: AppBar(
+        title: Text('Login Screen',style: TextStyle(fontWeight: FontWeight.bold),),
+        centerTitle: true,
+      ),
+      body: Container(
+        child: Center(child: Text("Login",style: TextStyle(fontWeight: FontWeight.bold),)),
+      ),
       floatingActionButton: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.end,

@@ -1,13 +1,17 @@
 import 'package:bloc_demo/bloc/cubit/SplashCubit%20.dart';
-import 'package:bloc_demo/ui/SplashScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'bloc/observer/AppBlocObserver.dart';
 import 'bloc/observer/MultiAppBlocObserver.dart';
 import 'bloc/cubit/ThemeCubit.dart';
+import 'utils/Const.dart';
+import 'ui/LoginScreen.dart';
+import 'ui/SplashScreen.dart';
+import 'utils/Prefs.dart';
 
-void main() {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Prefs.init();
 /*
  Bloc.observer = const AppBlocObserver(); //for single
 */
@@ -24,9 +28,13 @@ void main() {
     child:BlocBuilder<ThemeCubit,ThemeData>(builder: (context,theme){
      return MaterialApp(
          debugShowCheckedModeBanner: false,
-         title: 'Bloc Demo',
+         title: 'Bloc Demo App',
          theme: theme,
-         home: const Splashscreen(),
+         initialRoute: SPLASH_SCREEN,
+       routes: {
+         SPLASH_SCREEN: (context) => const Splashscreen(),
+         LOGIN_SCREEN: (context) => const Loginscreen(),
+       },
       );
     })
   ));

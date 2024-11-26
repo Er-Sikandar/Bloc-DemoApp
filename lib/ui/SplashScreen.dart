@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../bloc/cubit/SplashCubit .dart';
 import '../bloc/cubit/ThemeCubit.dart';
+import '../utils/Const.dart';
 
 class Splashscreen extends StatefulWidget {
   const Splashscreen({super.key});
@@ -24,7 +25,7 @@ class _SplashscreenState extends State<Splashscreen> {
     return BlocListener<SplashCubit, bool>(
         listener: (context, state) {
       if (state) {
-        Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => const Loginscreen()),);
+        Navigator.pushReplacementNamed(context, LOGIN_SCREEN);
       }
     },
     child: Scaffold(

@@ -5,6 +5,7 @@ class MultiAppBlocObserver extends BlocObserver{
 const AppBlocObserver(); //for single
 */
   /**
+   * this is used for lifecycle and error show
    * For Multiple
    */
   final List<BlocObserver> observers;
