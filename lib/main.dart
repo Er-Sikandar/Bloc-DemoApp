@@ -1,6 +1,7 @@
 import 'package:bloc_demo/bloc/cubit/SplashCubit%20.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'bloc/cubit/LoginCubit.dart';
 import 'bloc/observer/AppBlocObserver.dart';
 import 'bloc/observer/MultiAppBlocObserver.dart';
 import 'bloc/cubit/ThemeCubit.dart';
@@ -24,6 +25,7 @@ Future<void> main() async {
           providers: [
             BlocProvider(create: (_) => ThemeCubit()),
             BlocProvider(create: (_) => SplashCubit()),
+            BlocProvider(create: (_) => LoginCubit()),
           ],
     child:BlocBuilder<ThemeCubit,ThemeData>(builder: (context,theme){
      return MaterialApp(
