@@ -25,6 +25,8 @@ class _SplashscreenState extends State<Splashscreen> {
     return BlocListener<SplashCubit, bool>(
         listener: (context, state) {
       if (state) {
+        Navigator.pushReplacementNamed(context, HOME_SCREEN);
+      }else{
         Navigator.pushReplacementNamed(context, LOGIN_SCREEN);
       }
     },

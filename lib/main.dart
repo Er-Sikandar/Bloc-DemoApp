@@ -1,6 +1,8 @@
 import 'package:bloc_demo/bloc/cubit/SplashCubit%20.dart';
+import 'package:bloc_demo/ui/HomeScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'bloc/cubit/HomeCubit.dart';
 import 'bloc/cubit/LoginCubit.dart';
 import 'bloc/observer/AppBlocObserver.dart';
 import 'bloc/observer/MultiAppBlocObserver.dart';
@@ -26,6 +28,7 @@ Future<void> main() async {
             BlocProvider(create: (_) => ThemeCubit()),
             BlocProvider(create: (_) => SplashCubit()),
             BlocProvider(create: (_) => LoginCubit()),
+            BlocProvider(create: (_) => HomeCubit()),
           ],
     child:BlocBuilder<ThemeCubit,ThemeData>(builder: (context,theme){
      return MaterialApp(
@@ -36,6 +39,7 @@ Future<void> main() async {
        routes: {
          SPLASH_SCREEN: (context) => const Splashscreen(),
          LOGIN_SCREEN: (context) => const Loginscreen(),
+         HOME_SCREEN: (context) => const HomeScreen(),
        },
       );
     })

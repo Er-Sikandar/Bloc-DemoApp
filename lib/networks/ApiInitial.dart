@@ -6,7 +6,7 @@ class ApiInitial extends ApiState {}
 class ApiLoading extends ApiState {}
 
 class ApiSuccess extends ApiState {
-  final String data;
+  final dynamic data;
 
   ApiSuccess(this.data);
 }
